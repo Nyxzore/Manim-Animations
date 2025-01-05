@@ -8,10 +8,7 @@ class Colors(ThreeDScene):
             y_range=[0,255,50],
             z_range=[0,255,50],
             )
-        labels = Axes.get_axis_labels(
-            MathTex("x"), MathTex("y"), MathTex("z")
-            )
-        self.add(Axes, labels)
+        self.add(Axes)
 
         vec = Vector((50,65,34))
         self.add(vec)
