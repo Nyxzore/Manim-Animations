@@ -1,0 +1,3 @@
+{
+    "Quadrilaterals": "from manim import *\r\nclass Quadrilaterals(Scene):\n    def construct(self):\n        sqaure = Square()\n        self.play(Create(sqaure))"
+}

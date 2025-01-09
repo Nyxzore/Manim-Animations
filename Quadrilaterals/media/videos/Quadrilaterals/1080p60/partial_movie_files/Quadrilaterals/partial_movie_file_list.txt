@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/advaj/Downloads/media/videos/Quadrilaterals/1080p60/partial_movie_files/Quadrilaterals/3977891868_3523803601_223132457.mp4'
+file 'file:C:/Users/advaj/Downloads/media/videos/Quadrilaterals/1080p60/partial_movie_files/Quadrilaterals/2852726489_634017564_748250439.mp4'
+file 'file:C:/Users/advaj/Downloads/media/videos/Quadrilaterals/1080p60/partial_movie_files/Quadrilaterals/2852726489_447117022_3895568466.mp4'
+file 'file:C:/Users/advaj/Downloads/media/videos/Quadrilaterals/1080p60/partial_movie_files/Quadrilaterals/2852726489_2528399817_367975219.mp4'
+file 'file:C:/Users/advaj/Downloads/media/videos/Quadrilaterals/1080p60/partial_movie_files/Quadrilaterals/2852726489_3065901182_2121793745.mp4'
+file 'file:C:/Users/advaj/Downloads/media/videos/Quadrilaterals/1080p60/partial_movie_files/Quadrilaterals/2852726489_4176185601_2877102918.mp4'
+file 'file:C:/Users/advaj/Downloads/media/videos/Quadrilaterals/1080p60/partial_movie_files/Quadrilaterals/2852726489_2268332985_3524512342.mp4'
+file 'file:C:/Users/advaj/Downloads/media/videos/Quadrilaterals/1080p60/partial_movie_files/Quadrilaterals/2852726489_1701802124_2464143285.mp4'
+file 'file:C:/Users/advaj/Downloads/media/videos/Quadrilaterals/1080p60/partial_movie_files/Quadrilaterals/2852726489_3352977763_758497372.mp4'
