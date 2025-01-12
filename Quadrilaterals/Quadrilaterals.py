@@ -92,15 +92,15 @@ class Quadrilaterals(Scene):
         self.play(FadeOut(top_edge, bot_edge))
       
         self.play(Write(property2))
-        left_parralel = MathTex(">", font_size = 30).rotate(PI/2).move_to(left_edge.get_center() + DOWN*0.2)
-        right_parralel = MathTex(">", font_size = 30).rotate(PI/2).move_to(right_edge.get_center() + DOWN*0.2)
+        left_parralel = Text(">", font_size = 30).rotate(PI/2).move_to(left_edge.get_center() + DOWN*0.2)
+        right_parralel = Text(">", font_size = 30).rotate(PI/2).move_to(right_edge.get_center() + DOWN*0.2)
         self.play(Create(left_edge), Create(right_edge))
         self.play(Create(left_parralel), Create(right_parralel))
         self.wait(0.5)
         self.play(FadeOut(left_edge), FadeOut(right_edge))
 
-        top_parralel = MathTex(">>", font_size = 30).move_to(top_edge.get_center() + LEFT*0.5)
-        bot_parralel = MathTex(">>", font_size = 30).move_to(bot_edge.get_center() + LEFT*0.5)
+        top_parralel = Text(">>", font_size = 30).move_to(top_edge.get_center() + LEFT*0.5)
+        bot_parralel = Text(">>", font_size = 30).move_to(bot_edge.get_center() + LEFT*0.5)
         self.play(Create(top_edge), Create(bot_edge))
         self.play(Create(top_parralel), Create(bot_parralel))
         self.wait(0.5)
@@ -151,15 +151,15 @@ class Quadrilaterals(Scene):
         self.play(FadeOut(top_edge, bot_edge, left_edge, right_edge))
       
         self.play(Write(property2))
-        left_parralel = MathTex(">", font_size = 30).rotate(PI/2).move_to(left_edge.get_center() + DOWN*0.2)
-        right_parralel = MathTex(">", font_size = 30).rotate(PI/2).move_to(right_edge.get_center() + DOWN*0.2)
+        left_parralel = Text(">", font_size = 30).rotate(PI/2).move_to(left_edge.get_center() + DOWN*0.2)
+        right_parralel = Text(">", font_size = 30).rotate(PI/2).move_to(right_edge.get_center() + DOWN*0.2)
         self.play(Create(left_edge), Create(right_edge))
         self.play(Create(right_parralel), Create(left_parralel))
         self.wait(0.5)
         self.play(FadeOut(left_edge), FadeOut(right_edge))
 
-        top_parralel = MathTex(">>", font_size = 30).move_to(top_edge.get_center() + LEFT*0.5)
-        bot_parralel = MathTex(">>", font_size = 30).move_to(bot_edge.get_center() + LEFT*0.5)
+        top_parralel = Text(">>", font_size = 30).move_to(top_edge.get_center() + LEFT*0.5)
+        bot_parralel = Text(">>", font_size = 30).move_to(bot_edge.get_center() + LEFT*0.5)
         self.play(Create(top_edge) ,Create(bot_edge))
         self.play(Create(top_parralel), Create(bot_parralel))
         self.wait(0.5)
@@ -187,15 +187,15 @@ class Quadrilaterals(Scene):
         TheParallelogram = Tex("The Parallelogram", font_size = title_font_size).align_on_border(UP)
         points = [
             LEFT*2 + DOWN,  # Point A (bottom left)
-            RIGHT + DOWN,  # Point B (bottom right)
-            RIGHT*2 + UP,  # Point C (top right)
+            RIGHT*2 + DOWN,  # Point B (bottom right)
+            RIGHT*3 + UP,  # Point C (top right)
             LEFT + UP  # Point D (top left)
         ]
         parallelogram = Polygon(*points, color=WHITE).shift(DOWN)
 
         self.play(Write(TheParallelogram), Create(parallelogram))
 
-        #properteis of rectangle
+        #properteis of parrelogram
         property1 = Tex("-2 pairs of opposite side are = (equal)", font_size = body_font_size).next_to(TheRectangle, DOWN)
         property2 = Tex("-2 pairs of opposite side are // (parrelel)", font_size = body_font_size).next_to(property1, DOWN)  
         property3 = Tex("-2 pairs of opposite angles are = (equal)", font_size = body_font_size).next_to(property2, DOWN)
@@ -222,17 +222,21 @@ class Quadrilaterals(Scene):
         self.play(Create(two_tick_top), Create(two_tick_bot))
         self.wait(0.5)
         self.play(FadeOut(top_edge, bot_edge))
-      
+
+
+        #working out parrelels needed angle
+        rotate_angle = np.arctan( (points[3][1]-points[0][1]) / (points[3][0]-points[0][0]) )
+
         self.play(Write(property2))
-        left_parralel = MathTex(">", font_size = 30).rotate(PI/2).move_to(left_edge.get_center() + DOWN*0.2)
-        right_parralel = MathTex(">", font_size = 30).rotate(PI/2).move_to(right_edge.get_center() + DOWN*0.2)
+        left_parralel = Text(">", font_size = 30).rotate(rotate_angle).move_to(left_edge.get_center() + (LEFT*1.05+DOWN*2) *0.2)
+        right_parralel = Text(">", font_size = 30).rotate(rotate_angle).move_to(right_edge.get_center() + (LEFT*1.05+DOWN*2) *0.2)
         self.play(Create(left_edge), Create(right_edge))
         self.play(Create(right_parralel), Create(left_parralel))
         self.wait(0.5)
         self.play(FadeOut(left_edge), FadeOut(right_edge))
 
-        top_parralel = MathTex(">>", font_size = 30).move_to(top_edge.get_center() + LEFT*0.5)
-        bot_parralel = MathTex(">>", font_size = 30).move_to(bot_edge.get_center() + LEFT*0.5)
+        top_parralel = Text(">>", font_size = 30).move_to(top_edge.get_center() + LEFT*0.5)
+        bot_parralel = Text(">>", font_size = 30).move_to(bot_edge.get_center() + LEFT*0.5)
         self.play(Create(top_edge) ,Create(bot_edge))
         self.play(Create(top_parralel), Create(bot_parralel))
         self.wait(0.5)
@@ -240,14 +244,101 @@ class Quadrilaterals(Scene):
 
         self.play(Write(property3))
         #opp angles = 
-        ul_angle = Angle(top_edge, left_edge, radius=0.5)
-        dr_angle = Angle(bot_edge, right_edge, radius=0.5)
+        ULAngle = [points[0], points[3],points[2]]
+        DRAngle = [points[2], points[1],points[0]]
+        URAngle = [points[3], points[2],points[1]]
+        DLAngle = [points[1], points[0],points[3]]
 
-        ur_angle = Angle(top_edge, right_edge, radius=0.5)
-        dl_angle = Angle(bot_edge, left_edge, radius=0.5)
+        ul_angle = Angle.from_three_points(*ULAngle, radius=0.5).shift(DOWN)
+        dr_angle = dr_angle = Angle.from_three_points(*DRAngle, radius=0.5).shift(DOWN)
 
-        ur_angle = VGroup(ur_angle, ur_angle.copy().shift(LEFT*0.05))
-        dl_angle = VGroup(dl_angle, dl_angle.copy().shift(RIGHT*0.05))
+        ur_angle = Angle.from_three_points(*URAngle, radius=0.5).shift(DOWN)
+        dl_angle = Angle.from_three_points(*DLAngle, radius=0.5).shift(DOWN)
+
+        ur_angle = VGroup(Angle.from_three_points(*URAngle, radius=0.5).shift(DOWN),
+                          Angle.from_three_points(*URAngle, radius=0.7).shift(DOWN))
+        dl_angle = VGroup(Angle.from_three_points(*DLAngle, radius=0.5).shift(DOWN),
+                          Angle.from_three_points(*DLAngle, radius=0.7).shift(DOWN)) 
+
+        self.play(Create(ul_angle), Create(dr_angle))
+        self.play(Create(ur_angle), Create(dl_angle))
+        self.wait(2)
+
+        #-------------------------------------------------------------------------
+        #THE RHOMBUS
+        self.play(FadeOut(TheParallelogram, parallelogram, ul_angle,ur_angle,dl_angle,dr_angle,left_parralel, right_parralel, top_parralel, bot_parralel
+                          ,two_tick_bot, two_tick_top, one_tick_equal_left, one_tick_equal_right, property1, property2, property3))
+        TheRhombus = Tex("The Rhombus", font_size = title_font_size).align_on_border(UP)
+        points = [
+            LEFT*2 + DOWN,  # Point A (bottom left)
+            RIGHT + DOWN,  # Point B (bottom right)
+            RIGHT*2 + UP,  # Point C (top right)
+            LEFT + UP  # Point D (top left)
+        ]
+        rhombus = Polygon(*points, color=WHITE).shift(DOWN)
+
+        self.play(Write(TheRhombus), Create(rhombus))
+
+        #properteis of parrelogram
+        property1 = Tex("-All 4 sides are = (equal)", font_size = body_font_size).next_to(TheRhombus, DOWN)
+        property2 = Tex("-2 pairs of opposite side are // (parrelel)", font_size = body_font_size).next_to(property1, DOWN)  
+        property3 = Tex("-2 pairs of opposite angles are = (equal)", font_size = body_font_size).next_to(property2, DOWN)
+
+        left_edge = Line(points[0], points[3], color=GREEN).shift(DOWN)
+        right_edge = Line(points[1], points[2], color=GREEN).shift(DOWN)
+        bot_edge = Line(points[0], points[1], color=BLUE).shift(DOWN)
+        top_edge = Line(points[2], points[3], color=BLUE).shift(DOWN)
+
+        self.play(Write(property1)) 
+        one_tick_equal_left = Line(left_edge.get_center() - 0.1*LEFT, left_edge.get_center() - 0.1*RIGHT)
+        one_tick_equal_right = Line(right_edge.get_center() - 0.1*LEFT, right_edge.get_center() - 0.1*RIGHT)
+
+        one_tick_equal_top = Line(top_edge.get_center() - 0.1*DOWN, top_edge.get_center() - 0.1*UP)
+        one_tick_equal_bot = Line(bot_edge.get_center() - 0.1*DOWN, bot_edge.get_center() - 0.1*UP)
+
+        self.play(Create(left_edge), Create(right_edge))
+        self.play(Create(one_tick_equal_left), Create(one_tick_equal_right))
+        self.wait(0.5)
+        self.play(FadeOut(left_edge, right_edge))
+        self.play(Create(bot_edge), Create(top_edge))
+        self.play(Create(one_tick_equal_top), Create(one_tick_equal_bot))
+        self.wait(0.5)
+        self.play(FadeOut(top_edge, bot_edge))
+        #working out parrelels needed angle
+        rotate_angle = np.arctan( (points[3][1]-points[0][1]) / (points[3][0]-points[0][0]) )
+
+        self.play(Write(property2))
+        left_parralel = Text(">", font_size = 30).rotate(rotate_angle).move_to(left_edge.get_center() + (LEFT*1.05+DOWN*2) *0.2)
+        right_parralel = Text(">", font_size = 30).rotate(rotate_angle).move_to(right_edge.get_center() + (LEFT*1.05+DOWN*2) *0.2)
+        self.play(Create(left_edge), Create(right_edge))
+        self.play(Create(right_parralel), Create(left_parralel))
+        self.wait(0.5)
+        self.play(FadeOut(left_edge), FadeOut(right_edge))
+
+        top_parralel = Text(">>", font_size = 30).move_to(top_edge.get_center() + LEFT*0.5)
+        bot_parralel = Text(">>", font_size = 30).move_to(bot_edge.get_center() + LEFT*0.5)
+        self.play(Create(top_edge) ,Create(bot_edge))
+        self.play(Create(top_parralel), Create(bot_parralel))
+        self.wait(0.5)
+        self.play(FadeOut(top_edge), FadeOut(bot_edge))
+
+        self.play(Write(property3))
+        #opp angles = 
+        ULAngle = [points[0], points[3],points[2]]
+        DRAngle = [points[2], points[1],points[0]]
+        URAngle = [points[3], points[2],points[1]]
+        DLAngle = [points[1], points[0],points[3]]
+
+        ul_angle = Angle.from_three_points(*ULAngle, radius=0.5).shift(DOWN)
+        dr_angle = dr_angle = Angle.from_three_points(*DRAngle, radius=0.5).shift(DOWN)
+
+        ur_angle = Angle.from_three_points(*URAngle, radius=0.5).shift(DOWN)
+        dl_angle = Angle.from_three_points(*DLAngle, radius=0.5).shift(DOWN)
+
+        ur_angle = VGroup(Angle.from_three_points(*URAngle, radius=0.3).shift(DOWN),
+                          Angle.from_three_points(*URAngle, radius=0.5).shift(DOWN))
+        dl_angle = VGroup(Angle.from_three_points(*DLAngle, radius=0.3).shift(DOWN),
+                          Angle.from_three_points(*DLAngle, radius=0.5).shift(DOWN)) 
 
         self.play(Create(ul_angle), Create(dr_angle))
         self.play(Create(ur_angle), Create(dl_angle))
