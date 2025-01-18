@@ -1,2 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/Users/ethan/OneDrive/Documents/GitHub/Manim-Animations/media/videos/color_vis/480p15/partial_movie_files/Colors/1227997302_730296310_3636727567.mp4'
